@@ -12,7 +12,7 @@
 pipeline {
     agent { docker { image 'node:6.3' } }
     environment {
-        PATH=/usr/local/bin:$PATH
+        PATH=/usr/local/bin:/usr/bin
     }
     stages {
         stage('build') {
