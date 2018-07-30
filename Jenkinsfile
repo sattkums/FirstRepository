@@ -11,6 +11,9 @@ pipeline {
 /*
 pipeline {
     agent { docker { image 'node:6.3' } }
+    environment {
+        PATH=/usr/local/bin:$PATH
+    }
     stages {
         stage('build') {
             steps {
