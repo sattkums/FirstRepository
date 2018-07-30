@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
     agent any
     stages {
         stage('build') {
@@ -7,8 +7,8 @@ pipeline {
             }
         }
     }
-}
-/*
+}*/
+
 pipeline {
     agent { docker { image 'node:6.3' } }
     environment {
