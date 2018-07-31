@@ -25,7 +25,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                docker images
+               bash 'docker images'
             }
         }
     }
