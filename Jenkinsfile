@@ -26,7 +26,7 @@ pipeline {
         stage('build') {
             steps {
                echo "PATH is: $PATH"
-               sh '/usr/local/bin/docker images'
+               sh 'curl localhost:7080'
             }
         }
     }
