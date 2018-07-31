@@ -22,10 +22,11 @@
 
 pipeline {
     agent { docker { image 'tomcat:8.0' } }
+    docker images
     stages {
         stage('build') {
             steps {
-               bash 'docker images'
+               echo "PATH is: $PATH"
             }
         }
     }
