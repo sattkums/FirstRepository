@@ -26,7 +26,11 @@ pipeline {
         stage('build') {
             steps {
                echo "PATH is: $PATH"
-               sh 'curl localhost:7080'
+            }
+        }
+        stage('test') {
+            steps {
+               sh 'nping -v'
             }
         }
     }
