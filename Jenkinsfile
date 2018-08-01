@@ -43,6 +43,7 @@
               echo "Started Tomcat with rest-hello"
         }
         stage ('Test Application') {
+              sh "sleep 30"
               sh "curl localhost:7080/pipeline/HelloPipeLineService/items"
         }
     }
