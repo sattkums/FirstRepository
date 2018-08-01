@@ -21,7 +21,8 @@
 }*/
 
 pipeline {
-    agent { docker { image 'tomcat:8.0' } }
+    //agent { docker { image 'tomcat:8.0' } }
+    node{
     stages {
         stage('build') {
             steps {
@@ -34,4 +35,5 @@ pipeline {
             }    
         }
     }
+  }
 }
