@@ -44,7 +44,9 @@
         }
         stage ('Test') {
               sh "sleep 20"
-              sh "curl localhost:7080/pipeline/HelloPipeLineService/items"
+              sh "curl localhost:7080/pipeline/HelloPipeLineService/helloitems"
+              echo "________________________________________"
+              sh "curl localhost:7080/pipeline/HaiPipeLineService/haiitems"
         }
     }
 
