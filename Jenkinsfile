@@ -39,7 +39,9 @@
         }
         stage ('Run Application') {
               sh "docker run --rm -d -p 7080:8080 rest-hello"
-              echo "Started Tomcat with rest-hello and calling API"
+              echo "Started Tomcat with rest-hello"
+        }
+        stage ('Test Application') {
               sh "curl localhost:7080/pipeline/HelloPipeLineService/items"
         }
     }
