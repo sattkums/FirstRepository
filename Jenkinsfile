@@ -20,7 +20,7 @@
     }
 }*/
 
-pipeline {
+/*pipeline {
     agent { docker { image 'tomcat:8.5.32' } }
     stages {
         stage('build') {
@@ -29,16 +29,18 @@ pipeline {
             }
         }
     }
-}
-/*
+}*/
+
  node
  {
         stage('build') {
-               echo "PATH is: $PATH"
+               sh "docker build -t rest-hello /Users/satt/Satheesh/cloud/rest-hello"
+               echo "Built docker image for rest-hello"
         }
         stage ('Run Application') {
-              sh "docker run --rm -p 7080:8080 tomcat:8.0 &"
-              sh "curl localhost:7080"
+              sh "docker run --rm -p 7080:8080 rest-hello &"
+              echo "Started Tomcat with rest-hello and calling API"
+              sh "curl localhost:7080/pipeline/HelloPipeLineService/items"
         }
     }
-*/
+
