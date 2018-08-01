@@ -28,10 +28,5 @@ pipeline {
                echo "PATH is: $PATH"
             }
         }
-        stage('test') {
-            steps {
-               sh 'npm --version'
-            }
-        }
     }
 }
