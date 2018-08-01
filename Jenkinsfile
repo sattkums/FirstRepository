@@ -20,8 +20,17 @@
     }
 }*/
 
-//pipeline {
-    //agent { docker { image 'tomcat:8.0' } }
+pipeline {
+    agent { docker { image 'tomcat:8.0' } }
+    stages {
+        stage('build') {
+            steps {
+                echo "PATH is: $PATH"
+            }
+        }
+    }
+}
+/*
  node
  {
         stage('build') {
@@ -32,4 +41,4 @@
               sh "curl localhost:7080"
         }
     }
-//}
+*/
