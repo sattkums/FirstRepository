@@ -9,7 +9,7 @@
     }
 }*/
 
-/*pipeline {
+pipeline {
     agent { docker { image 'node:6.3' } }
     stages {
         stage('build') {
@@ -18,9 +18,9 @@
             }
         }
     }
-}*/
+}
 
-pipeline {
+/*pipeline {
     agent { docker { image 'tomcat:8.0' } }
     stages {
         stage('build') {
@@ -29,4 +29,4 @@ pipeline {
             }
         }
     }
-}
+}*/
