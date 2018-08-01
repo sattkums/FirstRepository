@@ -29,6 +29,7 @@
         }
         stage ('Run Application') {
               sh "docker run --rm -p 7080:8080 tomcat:8.0 &"
+              sh "curl localhost:7080"
         }
     }
 //}
