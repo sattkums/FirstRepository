@@ -24,7 +24,6 @@
     //agent { docker { image 'tomcat:8.0' } }
  node
  {
-    stages {
         stage('build') {
             steps {
                echo "PATH is: $PATH"
@@ -36,5 +35,4 @@
             }    
         }
     }
-  }
 //}
