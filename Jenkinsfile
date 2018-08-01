@@ -33,16 +33,16 @@
 
  node
  {
-        stage('build') {
+        stage('Build') {
                sh "docker build -t rest-hello /Users/satt/Satheesh/cloud/rest-hello"
                echo "Built docker image for rest-hello"
         }
-        stage ('Run Application') {
+        stage ('Deploy') {
               sh "docker rm -f hello || true"
               sh "docker run --rm -d -p 7080:8080 --name hello rest-hello"
               echo "Started Tomcat with rest-hello"
         }
-        stage ('Test Application') {
+        stage ('Test') {
               sh "sleep 20"
               sh "curl localhost:7080/pipeline/HelloPipeLineService/items"
         }
