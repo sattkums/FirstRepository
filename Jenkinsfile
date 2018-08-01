@@ -20,9 +20,10 @@
     }
 }*/
 
-pipeline {
+//pipeline {
     //agent { docker { image 'tomcat:8.0' } }
- node{
+ node
+ {
     stages {
         stage('build') {
             steps {
