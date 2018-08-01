@@ -38,7 +38,7 @@
                echo "Built docker image for rest-hello"
         }
         stage ('Run Application') {
-              sh "docker rm -f rest-hello || true"
+              sh "docker rm -f hello || true"
               sh "docker run --rm -d -p 7080:8080 --name hello rest-hello"
               echo "Started Tomcat with rest-hello"
         }
