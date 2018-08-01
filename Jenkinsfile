@@ -27,17 +27,11 @@ pipeline {
             steps {
                echo "PATH is: $PATH"
             }
+        }
+        stage ('Run Application') {
             steps {
-                try {
-              // Start tomcat container here
-                  sh "docker run -it --rm -p 7080:8080 tomcat:8.0"
-                } catch (error) {
-                } finally {
-                  // Stop and remove database container here
-                  //sh 'docker-compose stop db'
-                  //sh 'docker-compose rm db'
-                }
-            }
+                sh "docker run -it --rm -p 7080:8080 tomcat:8.0"
+            }    
         }
     }
 }
