@@ -9,7 +9,7 @@
     }
 }*/
 
-pipeline {
+/*pipeline {
     agent { docker { image 'node:6.3' } }
     stages {
         stage('build') {
@@ -18,9 +18,9 @@ pipeline {
             }
         }
     }
-}
+}*/
 
-/*pipeline {
+pipeline {
     agent { docker { image 'tomcat:8.0' } }
     stages {
         stage('build') {
@@ -28,5 +28,16 @@ pipeline {
                echo "PATH is: $PATH"
             }
         }
+        stage ('Run Application') {
+        try {
+          // Start tomcat container here
+          sh "docker run -it --rm -p 7080:8080 tomcat:8.0"
+        } catch (error) {
+        } finally {
+          // Stop and remove database container here
+          //sh 'docker-compose stop db'
+          //sh 'docker-compose rm db'
+        }
+  }
     }
-}*/
+}
