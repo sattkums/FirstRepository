@@ -30,7 +30,7 @@ pipeline {
         }
         stage('test') {
             steps {
-               sh 'nping -v'
+               sh 'npm --version'
             }
         }
     }
